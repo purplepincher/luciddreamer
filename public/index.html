@@ -305,7 +305,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 <section class="demo-card">
   <h3>Quick Start</h3>
-  <pre><code>pip install luciddreamer-agent==0.1.0
+  <pre><code>pip install "luciddreamer-agent>=0.2.2"
 
 from luciddreamer_agent import LucidDreamerAgent, DreamMood, DreamEntry, SleepQuality, TriggerType
 agent = LucidDreamerAgent()</code></pre>
@@ -313,7 +313,7 @@ agent = LucidDreamerAgent()</code></pre>
 
 <!-- COPY: HONESTY_NOTE -->
 <section id="honesty">
-  <p class="honesty-note"><em>Honesty note: <code>luciddreamer-agent</code> is a real, published PyPI package. Pin <code>==0.1.0</code>: the current release (0.2.0) is sdist-only and its <code>__init__.py</code> is malformed, raising <code>SyntaxError</code> on import. The 0.1.0 release is dependency-free and runs standalone; 0.2.0 also pulls in <code>fleet_agent</code>. The package is a small tool, not a finished app.</em></p>
+  <p class="honesty-note"><em>Honesty note: <code>luciddreamer-agent</code> is a real, published PyPI package. Use <code>0.2.2</code> or later — <code>0.2.0</code> and <code>0.2.1</code> were published broken (a malformed <code>__init__.py</code> raising <code>SyntaxError</code> on import, and a build that accidentally bundled unrelated local files, respectively) and are both fixed as of <code>0.2.2</code>. The current release installs with zero dependencies and runs standalone. The package is a small tool, not a finished app.</em></p>
 </section>
 
 </body>
