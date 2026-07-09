@@ -10,10 +10,10 @@ siblings — [`activelog`](https://github.com/purplepincher/activelog) and
 exact same Worker + design-system skeleton, differing only in the page they
 serve and the Worker name.
 
-> **Good news up front:** unlike its two siblings, this landing page's code
-> example **is accurate**. The imports it shows match the real package, and the
-> package genuinely runs. The one caveat is version pinning — see
-> [Honesty / status](#honesty--status).
+> **Status note:** unlike its two siblings, this landing page's code example
+> **is accurate**. The imports it shows match the real package, and the
+> package genuinely runs — see [Honesty / status](#honesty--status) for the
+> version history.
 
 ---
 
@@ -124,7 +124,7 @@ from luciddreamer_agent import (
 
 ### This was executed, not just read
 
-Against the `0.1.0` wheel, the following ran with **no external dependencies**
+Against the `0.2.2` wheel, the following ran with **no external dependencies**
 and **no server** — the package works entirely standalone:
 
 ```python
@@ -149,20 +149,15 @@ Using the family's honesty-marker convention:
 
 - ✅ **real today** — the static landing page renders; the Worker serves it via
   `env.ASSETS`; the `family/` design-system assets are present and inlined; and
-  the `luciddreamer-agent` **0.1.0** package genuinely works standalone, with an
-  API that matches the page.
-- ⚠️ **real but conditional — pin the version.** The **current** PyPI release is
-  **0.2.0** (sdist only), and it has two problems the 0.1.0 wheel does not:
-  1. It now `import`s `fleet_agent` (`BaseAgent`, `EmergenceDetector`,
-     `HolonomyConsensus`), so it is no longer dependency-free.
-  2. Its `__init__.py` is malformed — the same mis-indented module-level
-     `__init__` pattern as the sibling packages — and raises `SyntaxError`
-     (`unindent does not match any outer indentation level`, line 209) on
-     import.
-
-  So `pip install luciddreamer-agent` today installs the broken 0.2.0. To get
-  the working package the landing page describes, install
-  **`luciddreamer-agent==0.1.0`**.
+  the `luciddreamer-agent` **0.2.2** package (the current release) genuinely
+  works standalone, with zero dependencies and an API that matches the page.
+- ⚠️ **history worth knowing, now resolved.** Two earlier releases were
+  published broken: `0.2.0`'s `__init__.py` had the same mis-indented
+  module-level `__init__` pattern as the sibling packages and raised
+  `SyntaxError` on import; `0.2.1`'s build accidentally bundled unrelated
+  local files into the sdist. Both are fixed as of `0.2.2` — a plain
+  `pip install luciddreamer-agent` today installs a working package, no
+  version pin required.
 - 🔮 **later phase / not done** — no tests, no CI, no `package.json` in this
   repo; the page does not apply the per-site accent swap or the provenance
   panel.

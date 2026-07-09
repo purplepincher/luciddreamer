@@ -294,30 +294,26 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 <section class="hero">
   <p class="eyebrow">LucidDreamer</p>
-  <!-- COPY: HERO_HEADLINE -->
-  <h1>Turn a fading dream into a practice you can train</h1>
-  <!-- COPY: HERO_SUBHEAD -->
-  <p class="subhead">Dream recall degrades in minutes. A structured log — mood, lucidity, triggers, recurring signs — is what turns a fleeting memory into a pattern you can actually improve, the same way any skill sharpens once you can see it instead of just feel it.</p>
+  <h1><code>luciddreamer-agent</code> — dream journal, sleep tracking, and lucid-trigger management</h1>
+  <p class="subhead"><code>luciddreamer-agent</code> is a Python package (PyPI) for recording dreams and sleep sessions, registering and attempting lucid-dream induction triggers (MILD, WBTB, SSILD, reality checks), and surfacing recurring dream signs and statistics over the log.</p>
 </section>
 
 <section>
-  <!-- COPY: WHAT_THIS_IS -->
   <h2>What This Is</h2>
-  <p><code>luciddreamer-agent</code> is a real Python package (<a href="https://pypi.org/project/luciddreamer-agent/">PyPI</a>) for dream journaling, sleep‑session tracking, lucid trigger management (MILD, WBTB, SSILD), and dream‑sign pattern recognition.</p>
+  <p><code>luciddreamer-agent</code> is a real Python package (<a href="https://pypi.org/project/luciddreamer-agent/">PyPI</a>). Its single public class is <code>LucidDreamerAgent</code>, with methods to <code>record_dream</code> and <code>record_sleep</code>, <code>register_trigger</code> and <code>record_trigger_attempt</code> for induction techniques, <code>suggest_triggers</code> and <code>get_top_dream_signs</code> for pattern analysis, and <code>get_statistics</code> plus <code>export_json</code> / <code>import_json</code> for summary and persistence. <code>TriggerType</code> covers <code>MILD</code>, <code>WBTB</code>, <code>SSILD</code>, <code>RealityCheck</code>, <code>WakeUp</code>, and <code>Custom</code>.</p>
 </section>
 
 <section class="demo-card">
-  <!-- COPY: REAL_QUICKSTART (final) -->
   <h3>Quick Start</h3>
-  <pre><code>pip install luciddreamer-agent
+  <pre><code>pip install "luciddreamer-agent>=0.2.2"
 
 from luciddreamer_agent import LucidDreamerAgent, DreamMood, DreamEntry, SleepQuality, TriggerType
 agent = LucidDreamerAgent()</code></pre>
 </section>
 
 <!-- COPY: HONESTY_NOTE -->
-<section>
-  <p class="honesty-note"><em>Honesty note: <code>luciddreamer-agent</code> is a real, published PyPI package. It is a small tool, not a finished app, but the induction helpers and pattern recognition are installable and working today.</em></p>
+<section id="honesty">
+  <p class="honesty-note"><em>Honesty note: <code>luciddreamer-agent</code> is a real, published PyPI package. Use <code>0.2.2</code> or later — <code>0.2.0</code> and <code>0.2.1</code> were published broken (a malformed <code>__init__.py</code> raising <code>SyntaxError</code> on import, and a build that accidentally bundled unrelated local files, respectively) and are both fixed as of <code>0.2.2</code>. The current release installs with zero dependencies and runs standalone. The package is a small tool, not a finished app.</em></p>
 </section>
 
 </body>
