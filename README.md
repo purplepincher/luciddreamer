@@ -10,8 +10,8 @@ siblings — [`activelog`](https://github.com/purplepincher/activelog) and
 exact same Worker + design-system skeleton, differing only in the page they
 serve and the Worker name.
 
-> **Good news up front:** unlike its two siblings, this landing page's code
-> example **is accurate**. The imports it shows match the real package, and the
+> **Status note:** unlike its two siblings, this landing page's code example
+> **is accurate**. The imports it shows match the real package, and the
 > package genuinely runs. The one caveat is version pinning — see
 > [Honesty / status](#honesty--status).
 
